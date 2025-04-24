@@ -5,7 +5,7 @@ source ./scripts/variables.sh
 
 echo "Step 6: Configuring Apache..."
 
-# Check if the virtual host file already exists
+# Check if the virtual host file already exists(v2)
 if [ -f "$APACHE_VHOST_CONF" ]; then
     echo "Step 6: Apache virtual host file already exists at $APACHE_VHOST_CONF."
     echo "Step 6: Renaming existing file to ${APACHE_VHOST_CONF}.bak"
