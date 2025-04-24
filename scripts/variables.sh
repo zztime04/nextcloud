@@ -17,10 +17,14 @@ WEB_SERVER_USER="www-data"
 APACHE_VHOST_CONF="/etc/apache2/sites-available/nextcloud.conf"
 APACHE_DEFAULT_VHOST_CONF="/etc/apache2/sites-available/000-default.conf"
 
+# MariaDB root 密码
+MYSQL_ROOT_PASSWORD="StrongRootPass123!"
 # Database configuration (replace with your actual database details)
 DB_NAME="nextcloud_db" # Placeholder
 DB_USER="nextcloud_user" # Placeholder
 DB_PASSWORD="your_db_password" # Placeholder
 DB_HOST="localhost"
 
+# Server Name
+SERVER_NAME="your_domain_or_ip" # Replace with your actual domain or IP address
 # Add more variables as needed

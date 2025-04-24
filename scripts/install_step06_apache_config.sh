@@ -8,7 +8,7 @@ echo "Step 6: Configuring Apache..."
 # Create Apache virtual host configuration file
 sudo tee $APACHE_VHOST_CONF > /dev/null <<EOF
 <VirtualHost *:80>
-    ServerName your_domain_or_ip # Replace with your actual domain or IP address
+    ServerName ${SERVER_NAME}
     DocumentRoot ${NEXTCLOUD_INSTALL_DIR}/
 
     <Directory ${NEXTCLOUD_INSTALL_DIR}/>
