@@ -5,6 +5,19 @@ source ./scripts/variables.sh
 
 echo "Step 6: Configuring Apache..."
 
+# Check if the virtual host file already exists
+if [ -f "$APACHE_VHOST_CONF" ]; then
+    echo "Step 6: Apache virtual host file already exists at $APACHE_VHOST_CONF."
+    echo "Step 6: Renaming existing file to ${APACHE_VHOST_CONF}.bak"
+    sudo mv "$APACHE_VHOST_CONF" "${APACHE_VHOST_CONF}.bak"
+    if [ $? -eq 0 ]; then
+        echo "Step 6: Existing file renamed successfully."
+    else
+        echo "Step 6: Error renaming existing file. Exiting."
+        exit 1
+    fi
+fi
+
 # Create Apache virtual host configuration file
 sudo tee $APACHE_VHOST_CONF > /dev/null <<EOF
 <VirtualHost *:80>
